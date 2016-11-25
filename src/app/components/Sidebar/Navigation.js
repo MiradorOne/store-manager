@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
+
 
 export default class Navigation extends Component {
 
@@ -9,23 +11,23 @@ export default class Navigation extends Component {
                 <ul className="sidebar-menu">
                     <li className="list-title">Main Navigation</li>
                     <li>
-                        <a href="#">Main</a>
+                        <Link to="/" >Main</Link>
                         <span className="pull-right-container"><i className="fa fa-angle-left"></i></span>
                     </li>
                     <li>
-                        <a href="#">Customers</a>
+                        <Link to="customers">Customers</Link>
                         <span className="pull-right-container"><i className="fa fa-angle-left"></i></span>
                     </li>
                     <li>
-                        <a href="#">Employees</a>
+                        <Link to="employees">Employees</Link>
                         <span className="pull-right-container"><i className="fa fa-angle-left"></i></span>
                     </li>
                     <li>
-                        <a href="#">Offices</a>
+                        <Link to="offices">Offices</Link>
                         <span className="pull-right-container"><i className="fa fa-angle-left"></i></span>
                     </li>
                     <li>
-                        <a href="#">Product Lines</a>
+                        <Link to="product-lines">Product Lines</Link>
                         <span className="pull-right-container"><i className="fa fa-angle-left"></i></span>
                     </li>
                 </ul>
