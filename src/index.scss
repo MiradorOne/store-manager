@@ -1,3 +1,133 @@
-body {
-  background-color: white;
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
+
+body {
+	background-color: #ecf0f5;
+	min-width: 1366px;
+	font-family: 'Roboto', sans-serif;
+}
+
+//============================ Sidebar styles ============================//
+.main-sidebar {
+	box-sizing: border-box;
+	width: 18%;
+	background-color: #222d32;
+	height: 100vh;
+
+	//=======Profile component=======//
+	.profile {
+		padding: 10px;
+		box-sizing: border-box;
+		color: #fff;
+		width: 100%;
+		img {
+			display: inline-block;
+			border-radius: 45px;
+		}
+		.info {
+			display: inline-block;
+			vertical-align: top;
+			padding-top: 10px;
+			line-height: 15px;
+			margin-left: 20px;
+			.profile-name {
+				font-size: 14px;
+			}
+			.status {
+				font-size: 10px;
+			}
+		}
+	}
+
+	//=======Search component=======//
+	.search {
+		width: 100%;
+		margin: 0 auto;
+
+		form {
+			padding: 0 10px;
+		}
+
+		input {
+			width: 100%;
+			color: #fff;
+			box-shadow: none;
+			background-color: #374850;
+			border: 1px solid transparent;
+			height: 35px;
+			display: block;
+			padding: 5px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+	}
+
+	//=======Navigation component=======//
+	.navigation {
+		color: #b8c7ce;
+		position: relative;
+
+		.list-title {
+			margin-top: 10px;
+			text-transform: uppercase;
+			color: #4b646f;
+			background: #1a2226;
+			padding: 10px 25px 10px 15px;
+			font-size: 12px;
+		}
+
+		ul {
+
+			li {
+				position: relative;
+				a {
+					border-left: 3px solid transparent;
+					color: #b8c7ce;
+					padding: 12px 5px 12px 15px;
+					display: block;
+					text-decoration: none;
+					font-size: 14px;
+				}
+
+				&:hover {
+					a {
+						color: #fff;
+						background: #1e282c;
+						border-left-color: #3c8dbc;
+					}
+
+				}
+
+			}
+
+		}
+
+		.pull-right-container {
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			i {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+//============================ Dashboard styles ============================//
+.dashboard {
+	width: 82%;
+	background-color: #ecf0f5;
+}
+
+
+
+
+
