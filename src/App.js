@@ -14,7 +14,7 @@ export default class Main extends Component {
     }
 
     getData() {
-        load('http://localhost:8000/test/').then(res => {
+        load('/test/').then(res => {
             console.info(res);
             return res;
         });
