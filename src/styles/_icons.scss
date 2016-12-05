@@ -1,0 +1,26 @@
+//============= Info box component icons =============
+
+.infobox-icon {
+	width:35%;
+	height:100%;
+	display: inline-block;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 75%;
+}
+
+.icon-worker {
+	background-image: url('./static/images/icons/worker.svg');
+}
+
+.icon-product {
+	background-image: url('./static/images/icons/product.svg');
+}
+
+.icon-orders {
+	background-image: url('./static/images/icons/line-chart.svg');
+}
+
+.icon-customer {
+	background-image: url('./static/images/icons/stats.svg');
+}

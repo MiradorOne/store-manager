@@ -1,0 +1,49 @@
+//================ InfoBoxes styles ================//
+
+.box-blue {
+	background-color: rgb(33,150,243);
+}
+
+.box-green {
+	background-color: rgb(76,175,80);
+}
+
+.box-orange {
+	background-color: rgb(255,152,0);
+}
+
+.box-purple {
+	background-color: rgb(103,58,183);
+}
+
+.info-boxes {
+	width:100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+
+	.info-box {
+		border-radius: 3px;
+		width: 25%;
+		height: 90px;
+		background-color: #fff;
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+
+		.box-info {
+			padding: 5px 10px;
+			width: 65%;
+			height: 100%;
+			display: inline-block;
+			vertical-align: top;
+
+			.box-value {
+				margin: 5px 0;
+				font-weight:600;
+				line-height: 35px;
+			}
+		}
+
+	}
+}

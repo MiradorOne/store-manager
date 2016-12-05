@@ -1,0 +1,24 @@
+//Common styles
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #ecf0f5;
+	min-width: 1366px;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+//Typography
+
+h2, h3, h4 {
+	letter-spacing:.55px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
