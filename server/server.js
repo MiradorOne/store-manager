@@ -13,6 +13,13 @@ const server = app.listen(8000, function() {
     console.log('Server listening on port ' + server.address().port);
 });
 
-app.get('/test/', function (req, res) {
-    Data.get(res);
+app.get('/api/', function (req, res) {
+    Data.get(req, res);
 });
+
+app.get('/api/:param/', function (req, res) {
+    Data.get(req, res);
+});
+
+
+

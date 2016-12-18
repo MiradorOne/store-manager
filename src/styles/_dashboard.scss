@@ -7,6 +7,7 @@
 	background-color: #ecf0f5;
 	display: block;
 	margin-left:18%;
+	margin-right:0;
 	padding:15px 10px;
 
 	h2 {
@@ -14,4 +15,91 @@
 		margin: 0 0 10px 0;
 	}
 
+	//================= Tables styles =================//
+	.orders-table {
+		table {
+			border-top: 3px solid $box-blue;
+			font-size: $default-font-size;
+			margin-top:20px;
+			border-radius: $default-border-radius;
+			background: #ffffff;
+			margin-bottom: 20px;
+			width: 100%;
+			box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+			border-collapse:collapse;
+
+			tr.title {
+				border-bottom: 1px solid $borders-color;
+				td {
+					font-size:16px;
+				}
+			}
+
+			tr.headers {
+				border-bottom: 2px solid $borders-color;
+				td {
+					border-bottom: none !important;
+				}
+			}
+
+			tbody,thead,tfoot {
+				td {
+					 padding: 10px;
+				 }
+
+				tr:not(.headers) {
+					td {
+						border-bottom: 1px solid $borders-color;
+					}
+				}
+
+				tr:not(.title) {
+					td {
+						&:first-child, &:last-child {
+							display: block;
+						}
+						&:first-child {
+							margin-left:10px;
+						}
+						&:last-child {
+							margin-right:10px;
+						}
+					}
+				}
+			}
+
+			thead {
+				tr:not(.title) {
+					font-weight: bold;
+					td {
+						padding-top: 20px;
+						border-bottom: 2px solid $borders-color;
+					}
+				}
+			}
+
+			tfoot {
+				position: relative;
+				margin-top:10px;
+				tr {
+					background-color: #fff;
+					height:70px;
+				}
+				td {
+					position: absolute;
+					padding-top:20px;
+					right:50px;
+					border-bottom: none !important;
+				}
+				.btn {
+					width: 30px;
+					height: 30px;
+					&:not(:first-child) {
+						margin-left:10px;
+					}
+				}
+			}
+
+		}
+	}
 }

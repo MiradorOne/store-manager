@@ -7,8 +7,22 @@
 
 body {
   background-color: #ecf0f5;
-  min-width: 1366px;
   font-family: 'Roboto', sans-serif; }
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  color: #fff;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer; }
+
+.btn-blue {
+  background-color: #00c0ef; }
 
 h2, h3, h4 {
   letter-spacing: .55px;
@@ -91,27 +105,29 @@ h2, h3, h4 {
         cursor: pointer; }
 
 .box-blue {
-  background-color: #2196f3; }
+  background-color: #00c0ef; }
 
 .box-green {
-  background-color: #4caf50; }
+  background-color: #00a65a; }
 
 .box-orange {
-  background-color: #ff9800; }
+  background-color: #f39c12; }
 
-.box-purple {
-  background-color: #673ab7; }
+.box-red {
+  background-color: #dd4b39; }
 
 .info-boxes {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  font-size: 14px; }
   .info-boxes .info-box {
     border-radius: 3px;
     width: 25%;
     height: 90px;
-    background-color: #fff; }
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
     .info-boxes .info-box:not(:last-child) {
       margin-right: 20px; }
     .info-boxes .info-box .box-info {
@@ -130,10 +146,60 @@ h2, h3, h4 {
   background-color: #ecf0f5;
   display: block;
   margin-left: 18%;
+  margin-right: 0;
   padding: 15px 10px; }
   .dashboard h2 {
     font-size: 20px;
     margin: 0 0 10px 0; }
+  .dashboard .orders-table table {
+    border-top: 3px solid #00c0ef;
+    font-size: 14px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse; }
+    .dashboard .orders-table table tr.title {
+      border-bottom: 1px solid #f4f4f4; }
+      .dashboard .orders-table table tr.title td {
+        font-size: 16px; }
+    .dashboard .orders-table table tr.headers {
+      border-bottom: 2px solid #f4f4f4; }
+      .dashboard .orders-table table tr.headers td {
+        border-bottom: none !important; }
+    .dashboard .orders-table table tbody td, .dashboard .orders-table table thead td, .dashboard .orders-table table tfoot td {
+      padding: 10px; }
+    .dashboard .orders-table table tbody tr:not(.headers) td, .dashboard .orders-table table thead tr:not(.headers) td, .dashboard .orders-table table tfoot tr:not(.headers) td {
+      border-bottom: 1px solid #f4f4f4; }
+    .dashboard .orders-table table tbody tr:not(.title) td:first-child, .dashboard .orders-table table tbody tr:not(.title) td:last-child, .dashboard .orders-table table thead tr:not(.title) td:first-child, .dashboard .orders-table table thead tr:not(.title) td:last-child, .dashboard .orders-table table tfoot tr:not(.title) td:first-child, .dashboard .orders-table table tfoot tr:not(.title) td:last-child {
+      display: block; }
+    .dashboard .orders-table table tbody tr:not(.title) td:first-child, .dashboard .orders-table table thead tr:not(.title) td:first-child, .dashboard .orders-table table tfoot tr:not(.title) td:first-child {
+      margin-left: 10px; }
+    .dashboard .orders-table table tbody tr:not(.title) td:last-child, .dashboard .orders-table table thead tr:not(.title) td:last-child, .dashboard .orders-table table tfoot tr:not(.title) td:last-child {
+      margin-right: 10px; }
+    .dashboard .orders-table table thead tr:not(.title) {
+      font-weight: bold; }
+      .dashboard .orders-table table thead tr:not(.title) td {
+        padding-top: 20px;
+        border-bottom: 2px solid #f4f4f4; }
+    .dashboard .orders-table table tfoot {
+      position: relative;
+      margin-top: 10px; }
+      .dashboard .orders-table table tfoot tr {
+        background-color: #fff;
+        height: 70px; }
+      .dashboard .orders-table table tfoot td {
+        position: absolute;
+        padding-top: 20px;
+        right: 50px;
+        border-bottom: none !important; }
+      .dashboard .orders-table table tfoot .btn {
+        width: 30px;
+        height: 30px; }
+        .dashboard .orders-table table tfoot .btn:not(:first-child) {
+          margin-left: 10px; }
 
 .infobox-icon {
   width: 35%;
@@ -141,7 +207,10 @@ h2, h3, h4 {
   display: inline-block;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 75%; }
+  background-size: 75%;
+  shape-rendering: crispEdges;
+  border-bottom-left-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
 
 .icon-worker {
   background-image: url("./static/images/icons/worker.svg"); }

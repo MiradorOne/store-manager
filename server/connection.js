@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const config = require('../server/connection.config');
 
 function Connection() {
     this.pool = null;
@@ -6,10 +7,10 @@ function Connection() {
     this.init = function() {
         this.pool = mysql.createPool({
             connectionLimit: 10,
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'classicmodels'
+            host: config.host,
+            user: config.user,
+            password: config.password,
+            database: config.database
         });
     };
 

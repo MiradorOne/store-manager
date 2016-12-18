@@ -1,19 +1,19 @@
 //================ InfoBoxes styles ================//
 
 .box-blue {
-	background-color: rgb(33,150,243);
+	background-color: $box-blue;
 }
 
 .box-green {
-	background-color: rgb(76,175,80);
+	background-color: $box-green;
 }
 
 .box-orange {
-	background-color: rgb(255,152,0);
+	background-color: $box-orange;
 }
 
-.box-purple {
-	background-color: rgb(103,58,183);
+.box-red {
+	background-color: $box-red;
 }
 
 .info-boxes {
@@ -21,12 +21,14 @@
 	height: auto;
 	display: flex;
 	justify-content: space-between;
+	font-size: $default-font-size;
 
 	.info-box {
-		border-radius: 3px;
+		border-radius: $default-border-radius;
 		width: 25%;
 		height: 90px;
 		background-color: #fff;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 		&:not(:last-child) {
 			margin-right: 20px;
 		}

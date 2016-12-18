@@ -9,7 +9,7 @@ export default class TotalOrders extends Component {
                 <div className="icon infobox-icon icon-orders box-green"></div>
                 <div className="box-info">
                     <h4>Total orders:</h4>
-                    <span className="box-value">120</span>
+                    <span className="box-value">{this.props.data}</span>
                 </div>
             </div>
         )
