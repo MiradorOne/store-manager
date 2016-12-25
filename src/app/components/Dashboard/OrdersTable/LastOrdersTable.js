@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
 
+import Loading from '../../common/Loading/Loading';
+
+//Request util
 import load from '../../../request';
 
 export default class LastOrdersTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            pageNumber: 1
         };
         this.getTableData = this.getTableData.bind(this);
         this.getTableData();
@@ -20,8 +24,10 @@ export default class LastOrdersTable extends Component {
         })
     }
 
-    test() {
-        console.log('clicked');
+    changePageNumber(number) {
+        this.setState({
+            pageNumber: number,
+        });
     }
 
     render() {
@@ -32,12 +38,14 @@ export default class LastOrdersTable extends Component {
                 for (let i = 1; i <= result; i++) {
                     array.push(i);
                 }
-                return array.map(value => {
+                return array.map((value, i) => {
                     return (
-                        <button key={value} onClick={this.test.bind(this)} className="btn btn-blue">{value}</button>
+                        <button key={value} onClick={this.changePageNumber.bind(this, i+1)}
+                        className={`btn ${i+1 === this.state.pageNumber ? 'btn-blue-darker' : 'btn-blue'}`}>{value}</button>
                     )
                 })
             }
+            return true;
         };
 
         const listData = this.state.data.map((value, i) => {
@@ -48,17 +56,23 @@ export default class LastOrdersTable extends Component {
                     </tr>
                 )
             } else {
-                return (
-                    <tr key={i}>
-                        <td>{value.orderNumber}</td>
-                        <td>{value.productCode}</td>
-                        <td>{value.quantityOrdered}</td>
-                        <td>{value.priceEach}</td>
-                        <td>{value.orderLineNumber}</td>
-                        <td>{value.customerNumber}</td>
-                        <td>{value.status}</td>
-                    </tr>
-                )
+                /* Algorithm for page pagination: (DataPerPage * In-1 < In <= DataPerPage * In),
+                 * where In = button index
+                 * */
+                if ( i <= (this.props.dataPerPage * this.state.pageNumber) &&
+                    i > (this.props.dataPerPage * (this.state.pageNumber-1)) ) {
+                    return (
+                        <tr key={i}>
+                            <td>{value.orderNumber}</td>
+                            <td>{value.productCode}</td>
+                            <td>{value.quantityOrdered}</td>
+                            <td>{value.priceEach}</td>
+                            <td>{value.orderLineNumber}</td>
+                            <td>{value.customerNumber}</td>
+                            <td>{value.status}</td>
+                        </tr>
+                    )
+                }
             }
         });
         return (
@@ -80,12 +94,12 @@ export default class LastOrdersTable extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    {listData}
+                    {listData || <Loading/>}
                     </tbody>
                     <tfoot>
                         <tr>
                             <td>
-                                {showButtons()}
+                                {showButtons() ? showButtons() : <Loading/>}
                             </td>
                         </tr>
                     </tfoot>

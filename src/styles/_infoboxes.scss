@@ -16,6 +16,18 @@
 	background-color: $box-red;
 }
 
+.loading {
+	display: inline-block;
+	width:100%;
+	padding-top:10px;
+	svg {
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin:0 auto;
+	}
+}
+
 .info-boxes {
 	width:100%;
 	height: auto;

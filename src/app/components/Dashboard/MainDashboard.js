@@ -10,7 +10,7 @@ export default class Dashboard extends Component {
             <main className="dashboard">
                 <h2>Dashboard</h2>
                 <InfoBoxes/>
-                <LastOrdersTable dataLimit="40" dataPerPage="5"/>
+                <LastOrdersTable dataLimit="40" dataPerPage="8"/>
             </main>
         )
     }
