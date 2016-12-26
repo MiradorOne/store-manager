@@ -24,6 +24,17 @@ body {
 	appearance: none;
 	border:none;
 	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	&:not(:first-child) {
+		margin-left:10px;
+	}
+}
+
+.btn-arrow-pagination {
+	margin: 0 !important;
+	border-radius: 0 !important;
+	border: 1px solid #fff;
 }
 
 .btn-blue {
@@ -32,6 +43,51 @@ body {
 
 .btn-blue-darker {
 	background-color: $box-blue-darker;
+}
+
+.btn-green {
+	background-color: $box-green;
+}
+
+.btn-green-darker {
+	background-color: $box-green-darker;
+}
+
+
+
+.component-border-green {
+	border-top: 3px solid $box-green;
+	button {
+		background-color: $box-green;
+	}
+}
+
+.component-border-blue {
+	border-top: 3px solid $box-blue;
+	button {
+		background-color: $box-blue;
+	}
+}
+
+.component-border-orange {
+	border-top: 3px solid $box-orange;
+	button {
+		background-color: $box-orange;
+	}
+}
+
+.component-border-red {
+	border-top: 3px solid $box-red;
+	button {
+		background-color: $box-red;
+	}
+}
+
+.component-border-gray {
+	border-top: 3px solid $box-gray;
+	button {
+		background-color: $box-gray;
+	}
 }
 
 //Typography

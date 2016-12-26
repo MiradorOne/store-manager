@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import InfoBoxes from './InfoBoxes/InfoBoxes';
-import LastOrdersTable from './OrdersTable/LastOrdersTable';
+import LastOrdersTable from './Tables/LastOrdersTable';
 
 export default class Dashboard extends Component {
 

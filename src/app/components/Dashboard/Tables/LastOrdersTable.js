@@ -56,11 +56,11 @@ export default class LastOrdersTable extends Component {
                     </tr>
                 )
             } else {
-                /* Algorithm for page pagination: (DataPerPage * In-1 < In <= DataPerPage * In),
+                /* Algorithm for page pagination: (DataPerPage * In-1 <= In <= DataPerPage * In),
                  * where In = button index
                  * */
                 if ( i <= (this.props.dataPerPage * this.state.pageNumber) &&
-                    i > (this.props.dataPerPage * (this.state.pageNumber-1)) ) {
+                    i >= (this.props.dataPerPage * (this.state.pageNumber-1)) ) {
                     return (
                         <tr key={i}>
                             <td>{value.orderNumber}</td>

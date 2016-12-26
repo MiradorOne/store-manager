@@ -1,14 +1,25 @@
 // Colors for info-boxes, borders etc.
 $box-blue: #00c0ef;
-$box-blue-darker: #009ABF;
+$box-blue-darker: #009ABF !important;
 $box-orange: #f39c12;
 $box-green: #00a65a;
+$box-green-darker: #00773b !important;
 $box-red: #dd4b39;
+$box-gray: #d2d6de;
 $borders-color: #f4f4f4;
 
 //Fonts
+$link-color: #4b9ad2;
 $default-font-size: 14px;
 $default-font-weight: 400;
 
 
 $default-border-radius: 3px;
+$default-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+//Mixins
+
+@mixin background-opacity($color, $opacity: 0.3) {
+	background: $color; /* The Fallback */
+	background: rgba($color, $opacity);
+}

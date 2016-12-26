@@ -10,6 +10,7 @@ function Data() {
                 table: req.query.table,
                 count: req.query.count || false,
                 limit: req.query.limit || false,
+                where: req.query.where || false
             };
 
             let sql = '';
@@ -29,14 +30,15 @@ function Data() {
                 }
             } else {
                 sql = `select ${queryOptions.count ? 'count(*) as quantity ' : queryOptions.queryString}
-                        from ${queryOptions.table} ${queryOptions.limit ? 'limit ' + queryOptions.limit : ''} `;
+                        from ${queryOptions.table} ${queryOptions.limit ? 'limit ' + queryOptions.limit : ''}
+                        ${queryOptions.where ? 'where ' + queryOptions.where : ''}`;
             }
 
             console.log(sql);
 
             con.query(sql, function (err, result) {
                 if (err) {
-                    res.status(404);
+                    res.status(404);//TODO: Error handling
                     return res.sendStatus('Error in SQL query')
                 }
                 con.release();
