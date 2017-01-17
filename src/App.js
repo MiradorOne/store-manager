@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 
-import Sidebar from './app/components/Sidebar/Sidebar';
-import Dashboard from './app/components/Dashboard/Dashboard';
-
 export default class Main extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
+        const {dashboard, sidebar} = this.props;
         return (
             <div className="">
-                <Sidebar/>
-                <Dashboard/>
+                {sidebar}
+                {dashboard}
             </div>
         )
     }

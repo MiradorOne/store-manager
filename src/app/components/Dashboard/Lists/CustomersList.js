@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SearchInput, {createFilter} from 'react-search-input';
+import AddItem from '../../common/AddItem/AddItem';
 
 const KEYS_TO_FILTERS = ['customerNumber', 'customerName'];
 
@@ -19,7 +20,7 @@ export default class CustomersList extends Component {
     }
 
     changePageNumber(number) { // If number doesn't equal 0 and index of the last page
-        if (number != 0 && !(number > Math.ceil(this.props.data.length / +this.props.dataPerPage))) {
+        if (number !== 0 && !(number > Math.ceil(this.props.data.length / +this.props.dataPerPage))) {
             this.setState({
                 pageNumber: number,
             });
@@ -27,7 +28,10 @@ export default class CustomersList extends Component {
     }
 
     searchUpdated (term) {
-        this.setState({searchTerm: term});
+        this.setState({
+            searchTerm: term,
+            pageNumber: 1
+        });
     }
 
     render() {
@@ -79,11 +83,13 @@ export default class CustomersList extends Component {
         return (
             <div className="customers-list">
                 <ul className="component-border-green">
-                    <li className="list-title">Customers List</li>
+                    <li className="list-title">Customers List
+                        <AddItem/>
+                    </li>
                     {list}
                     <li className="pagination">
                         <SearchInput className="list-search" onChange={this.searchUpdated}/>
-                        {this.state.searchTerm.length == 0 ? showPagination() : ''}
+                        {this.state.searchTerm.length === 0 ? showPagination() : ''}
                     </li>
                 </ul>
             </div>

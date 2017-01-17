@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EditItem from '../../common/EditItem/EditItem';
 
 export default class CustomersDetails extends Component {
 
@@ -24,6 +25,7 @@ export default class CustomersDetails extends Component {
         });
         return (
             <div className="customers-details component-border-red">
+                <EditItem/>
                 <span className="list-title">{selectedCustomer}</span>
                 <ul className="details-fields">
                     <li>Contact Last Name:</li>

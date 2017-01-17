@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Loading from '../../common/Loading/Loading';
+
 // Child components
 import Employees from './Boxes/Employees';
 import Products from './Boxes/Products';
@@ -24,7 +26,7 @@ export default class InfoBoxes extends Component {
         const newState = {};
         Promise.all([
             load('/api?q=*&count=true&table=employees').then(data => {
-                newState.employees = JSON.parse(data)[0].quantity
+                newState.employees = JSON.parse(data)[0].quantity;
             }),
             load('api?q=*&count=true&table=products').then(data => {
                 newState.products = JSON.parse(data)[0].quantity
@@ -42,13 +44,13 @@ export default class InfoBoxes extends Component {
         })
     };
 
-    render() {
+    render() {//TODO: Make loading animation while data isn't displayed
         return (
             <div className="info-boxes">
-                <Employees data={this.state.boxesData.employees || 0}/>
-                <Products data={this.state.boxesData.products || 0}/>
-                <TotalOrders data={this.state.boxesData.orders || 0}/>
-                <TotalCustomers data={this.state.boxesData.customers || 0}/>
+                <Employees data={this.state.boxesData.employees || <Loading/>}/>
+                <Products data={this.state.boxesData.products || <Loading/>}/>
+                <TotalOrders data={this.state.boxesData.orders || <Loading/>}/>
+                <TotalCustomers data={this.state.boxesData.customers || <Loading/>}/>
             </div>
         )
     }

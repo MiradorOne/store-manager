@@ -97,3 +97,49 @@ h2, h3, h4 {
 	text-transform: uppercase;
 	font-weight: $default-font-weight;
 }
+
+// AddItem component
+
+.addItem {
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		width:3px;
+		left:10px;
+		height:15px;
+		background: $box-green;
+		top:50%;
+		transform: translateY(-50%);
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width:15px;
+		left:4px;
+		height:3px;
+		background: $box-green;
+		top:50%;
+		transform: translateY(-50%);
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.input-default {
+	width: 100%;
+	padding: 0 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: 1px solid #eee;
+	height: 30px;
+}
+
+.visible {
+	display: block;
+}
