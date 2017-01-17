@@ -1,4 +1,5 @@
 const connection = require('./connection');
+const config = require('./connection.config');
 
 function Data() {
     this.get = function (req, res) {
@@ -18,7 +19,7 @@ function Data() {
             if (queryOptions.queryParam) {
                 switch (queryOptions.queryParam) {
                     case 'ordertable':
-                        sql  =  'select orders.orderNumber,customerNumber,' +
+                        sql = 'select orders.orderNumber,customerNumber,' +
                             'status,productCode,quantityOrdered,priceEach,orderLineNumber ' +
                             'from orders ' +
                             'join orderdetails ' +
@@ -44,6 +45,77 @@ function Data() {
                 con.release();
                 res.send(result);
             })
+        })
+    };
+
+    this.delete = function (req, res) {
+        connection.acquire(function (err, con) {
+            if (!req.params.number) {
+                res.status(403);//
+                return res.sendStatus('Access denied')
+            } else {
+                const sql ='DELETE FROM '+ config.database + '.customers WHERE customers.customerNumber = ' + req.params.number;
+                con.query(sql,
+                    function (err) {
+                        if (err) {
+                            console.log(sql);
+                            con.release();
+                            res.send({success: false, error: err});
+                        }
+                        con.release();
+                        res.send('Customer №'+ req.params.number + ' successfully deleted');
+                    }
+                )
+            }
+        })
+    };
+
+    this.update = function (req, res) {
+        connection.acquire(function (err, con) {
+            if (!req.params.number) {
+                res.status(403);//
+                return res.sendStatus('Access denied')
+            } else {
+
+                const sql   = 'UPDATE '+ config.database +'.customers ' +
+                        'SET customerName = '+ '"' + req.query.name + '"' +', ' +
+                        'contactLastName = '+ '"' + req.query.lastname + '"' +', ' +
+                        'contactFirstName = '+ '"' + req.query.firstname + '"' +', ' +
+                        'phone = '+ '"' + req.query.phone + '"' +' ' +
+                        'WHERE customers.customerNumber = '+ req.params.number + ';';
+
+                con.query(sql,
+                    function (err) {
+                        if (err) {
+                            console.log(sql);
+                            con.release();
+                            res.send({success: false, error: err});
+                        }
+                        con.release();
+                        res.send('Customer №'+ req.params.number + ' successfully updated');
+                    }
+                )
+            }
+        })
+    };
+
+    this.insert = function (req, res) {
+        connection.acquire(function (err, con) {
+            if (!req.params.number) {
+                res.status(403);//
+                return res.sendStatus('Access denied')
+            } else {
+                con.query('INSERT INTO ' + config.database + '.customers (customerNumber) VALUES (' + req.params.number + ')',
+                    function (err) {
+                    if (err) {
+                        con.release();
+                        res.send({success: false, error: err});
+                    }
+                        con.release();
+                        res.send('Customer successfully added');
+                    }
+                )
+            }
         })
     }
 }

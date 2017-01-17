@@ -21,5 +21,20 @@ app.get('/api/:param/', function (req, res) {
     Data.get(req, res);
 });
 
+app.post('/customers/:number', function (req, res) {
+    Data.insert(req, res);
+});
+
+app.put('/customers/:number', function (req, res) {
+    Data.update(req, res);
+});
+
+app.delete('/customers/:number', function (req, res) {
+    Data.delete(req, res);
+});
+
+
+
+
 
 
