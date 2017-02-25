@@ -59,6 +59,7 @@ export default class CustomersList extends Component {
                             </div>
                         )
                     }
+                    return null;
                 })
             }
             return true;
@@ -78,6 +79,7 @@ export default class CustomersList extends Component {
                     </li>
                 )
             }
+            return null;
         });
 
         return (

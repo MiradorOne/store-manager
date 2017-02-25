@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Loading from '../../common/Loading/Loading';
 
 //Request util
-import load from '../../../request';
+import load from '../../../utils/request';
 
 export default class LastOrdersTable extends Component {
     constructor(props) {
@@ -74,6 +74,7 @@ export default class LastOrdersTable extends Component {
                     )
                 }
             }
+            return null;
         });
         return (
             <div className="orders-table">
