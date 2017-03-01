@@ -42,6 +42,7 @@
     "promise": "7.1.1",
     "react-dev-utils": "^0.3.0",
     "recursive-readdir": "2.1.0",
+    "redux-logger": "^2.8.1",
     "rimraf": "2.5.4",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
@@ -52,6 +53,7 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.15.2",
     "dateformat": "^2.0.0",
     "express": "^4.14.0",
@@ -59,8 +61,12 @@
     "mysql": "^2.12.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-redux": "^5.0.2",
     "react-router": "^3.0.0",
-    "react-search-input": "^0.10.3"
+    "react-search-input": "^0.10.3",
+    "redux": "^3.6.0",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",

@@ -2,26 +2,12 @@ import React, {Component} from 'react';
 
 import Loading from '../../common/Loading/Loading';
 
-//Request util
-import load from '../../../utils/request';
-
 export default class LastOrdersTable extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            data: [],
             pageNumber: 1
         };
-        this.getTableData = this.getTableData.bind(this);
-        this.getTableData();
-    }
-
-    getTableData() {
-        load(`/api/ordertable/?limit=${this.props.dataLimit ? this.props.dataLimit : 25}`).then(data => {
-            this.setState({
-                data: JSON.parse(data)
-            })
-        })
     }
 
     changePageNumber(number) {
@@ -34,7 +20,7 @@ export default class LastOrdersTable extends Component {
         const showButtons = () => {
             let array = [];
             if (this.props.dataPerPage) {
-                let result = Math.ceil(this.state.data.length / +this.props.dataPerPage);
+                let result = Math.ceil(this.props.orders.length / +this.props.dataPerPage);
                 for (let i = 1; i <= result; i++) {
                     array.push(i);
                 }
@@ -48,8 +34,9 @@ export default class LastOrdersTable extends Component {
             return true;
         };
 
-        const listData = this.state.data.map((value, i) => {
-            if (this.state.data.length === 0) {
+        const listData = this.props.orders.map((value, i) => {
+
+            if (this.props.orders.length === 0) {
                 return (
                     <tr>
                         <td>No result =(</td>
@@ -75,6 +62,7 @@ export default class LastOrdersTable extends Component {
                 }
             }
             return null;
+
         });
         return (
             <div className="orders-table">

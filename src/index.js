@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import App from './App';
-import Dashboard from './app/components/Dashboard/MainDashboard';
-import Customers from './app/components/Dashboard/Customers';
-import Sidebar from './app/components/Sidebar/Sidebar';
+import Dashboard from './app/containers/MainDashboard';
+import Customers from './app/containers/Customers';
+import Sidebar from './app/containers/Sidebar';
 import './index.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 

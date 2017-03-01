@@ -18,13 +18,13 @@ function Data() {
 
             if (queryOptions.queryParam) {
                 switch (queryOptions.queryParam) {
-                    case 'ordertable':
-                        sql = 'select orders.orderNumber,customerNumber,' +
-                            'status,productCode,quantityOrdered,priceEach,orderLineNumber ' +
+                    case 'orders':
+                        sql = 'select orderdetails.id as detailsId, orders.orderNumber, orderDate, ' +
+                            'requiredDate, shippedDate, comments, customerNumber, ' +
+                            'status ' +
                             'from orders ' +
                             'join orderdetails ' +
-                            'on orders.orderNumber = orderdetails.orderNumber ' +
-                            `limit ${queryOptions.limit ? queryOptions.limit : 50}`;
+                            'on orders.orderNumber = orderdetails.orderNumber ';
                         break;
                     default:
                         break;
