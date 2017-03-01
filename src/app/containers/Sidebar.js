@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import Profile from './Profile';
-import Search from './Search';
-import Navigation from './Navigation';
+import Profile from '../components/Sidebar/Profile';
+import Search from '../components/Sidebar/Search';
+import Navigation from '../components/Sidebar/Navigation';
 
 export default class Sidebar extends Component {
 
