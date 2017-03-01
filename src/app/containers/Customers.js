@@ -8,15 +8,11 @@ import CustomerPayments from '../components/Dashboard/Lists/CustomerPayments';
 import { fetchCustomersData } from '../actions/customerActions';
 import { fetchPaymentsData } from '../actions/paymentsActions';
 
-import request from '../utils/request';
-
 
 export class Dashboard extends Component {
     constructor() {
         super();
         this.state = {
-            customerDetails: [],
-            customerPayments: [],
             activeCustomerNum: 0,
         };
         this.handleClick = this.handleClick.bind(this);
@@ -28,23 +24,8 @@ export class Dashboard extends Component {
     }
 
     handleClick(customerNumber) {
-        //Load common details
-        request(`/api/?q=*&table=customers&where=customerNumber = ${customerNumber} `).then(details => {
-            this.setState({
-                customersList: this.state.customersList,
-                customerDetails: JSON.parse(details),
-                customerPayments: this.state.customerPayments,
-                activeCustomerNum: customerNumber,
-            })
-        });
-        //Load payment details
-        request(`/api/?q=*&table=payments&where=customerNumber = ${customerNumber} `).then(details => {
-            this.setState({
-                customersList: this.state.customersList,
-                customerDetails: this.state.customerDetails,
-                customerPayments: JSON.parse(details),
-                activeCustomerNum: customerNumber
-            })
+        this.setState({
+           activeCustomerNum: customerNumber
         });
     }
 
@@ -56,8 +37,16 @@ export class Dashboard extends Component {
                                handleClick={this.handleClick}
                                dataPerPage={10}
                                activeCustomerNumber={this.state.activeCustomerNum}/>
-                <CustomerDetails data={this.state.customerDetails}/>
-                <CustomerPayments data={this.state.customerPayments}/>
+                <CustomerDetails data={this.props.customersList.filter(value => {
+                    if (value.customerNumber === this.state.activeCustomerNum) {
+                        return value;
+                    }
+                })}/>
+                <CustomerPayments data={this.props.payments.filter(value => {
+                    if (value.customerNumber === this.state.activeCustomerNum) {
+                        return value;
+                    }
+                })}/>
             </main>
         )
     }
@@ -65,7 +54,8 @@ export class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        customersList: Object.keys(state.customers).map((key) => state.customers[key] )
+        customersList: Object.keys(state.customers).map((key) => state.customers[key] ),
+        payments: Object.keys(state.payments).map((key) => state.payments[key] )
     }
 };
 

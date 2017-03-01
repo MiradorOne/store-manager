@@ -9,9 +9,7 @@ export default class CustomerPayments extends Component {
                 <li><span className="title">Check Number:</span></li>
                 <li><span className="title">Payment Data:</span></li>
                 <li><span className="title">Amount:</span></li>
-                <div className="info">
-                    <span>No Result</span>
-                </div>
+                <div className="info"></div>
             </ul>
         );
         const payments = this.props.data.map((payment, i) => {
