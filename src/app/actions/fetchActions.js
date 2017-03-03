@@ -13,7 +13,23 @@ export function fetchMainData() { //Data for Main Dashboard
             axios.get('/api?q=*&table=products'),
         ])
             .then(axios.spread((orders, details, employees, customers, products) => {
-                dispatch({type: types.FETCH_ORDERS, payload: orders.data});
+
+                //Add to orders an array of ids from orderDetails
+                const newState = {};
+                const normalizeOrders = {};
+
+                orders.data.forEach(order => {
+                    normalizeOrders[order.orderNumber] = order;
+                    order.detailsIds = [];
+                });
+                orders.data.forEach(order => {
+                    normalizeOrders[order.orderNumber].detailsIds.push(order.detailsId);
+                    delete order.detailsId;
+                });
+
+                orders.data.forEach(order => newState[order.orderNumber] = order);
+
+                dispatch({type: types.FETCH_ORDERS, payload: { ...newState, ...normalizeOrders}});
                 dispatch({type: types.FETCH_ORDER_DETAILS, payload: details.data});
                 dispatch({type: types.FETCH_EMPLOYEES_DATA, payload: employees.data});
                 dispatch({type: types.FETCH_CUSTOMERS_DATA, payload: customers.data});
