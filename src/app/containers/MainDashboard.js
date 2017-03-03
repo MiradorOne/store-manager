@@ -19,8 +19,8 @@ export class Dashboard extends Component {
                 <InfoBoxes customersLength={this.props.customersLength}
                            employeersLength={this.props.employeesLength}
                            ordersLength={this.props.orders.length} productsLength={this.props.productsLength}/>
-                {/*<LastOrdersTable dataLimit="40" dataPerPage="8"*/}
-                                 {/*orders={this.props.orders} details={this.props.orderDetails}/>*/}
+                <LastOrdersTable dataPerPage="5"
+                                 orders={this.props.orders} details={this.props.orderDetails}/>
             </main>
         )
     }
@@ -28,7 +28,7 @@ export class Dashboard extends Component {
 
 function mapStateToProps(store) {
     return {
-        orders: store.orders,
+        orders: Object.keys(store.orders).map(key => store.orders[key]),
         orderDetails: store.orderDetails,
         customersLength: Object.keys(store.customers).length,
         employeesLength: Object.keys(store.employees).length,

@@ -46,12 +46,14 @@
 			tbody,thead,tfoot {
 				td {
 					 padding: 10px;
+					vertical-align: top;
+					p {
+						padding:4px 0;
+					}
 				 }
 
 				tr:not(.headers) {
-					td {
-						border-bottom: 1px solid $borders-color;
-					}
+					border-bottom: 1px solid $borders-color;
 				}
 
 				tr:not(.title) {
