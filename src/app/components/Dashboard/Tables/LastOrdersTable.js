@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Loading from '../../common/Loading/Loading';
+import '../../../../styles/components/LastOrdersTable.css';
 
 export default class LastOrdersTable extends Component {
     constructor() {

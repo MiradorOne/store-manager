@@ -1,0 +1,55 @@
+.customers-details, .customer-payments {
+  position: relative;
+  width: 68%;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .customers-details .list-title, .customer-payments .list-title {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #f4f4f4; }
+  .customers-details ul, .customer-payments ul {
+    list-style: none;
+    display: inline-block; }
+  .customers-details .details-fields, .customers-details .details, .customer-payments .details-fields, .customer-payments .details {
+    width: 50%; }
+    .customers-details .details-fields li, .customers-details .details li, .customer-payments .details-fields li, .customer-payments .details li {
+      font-size: 14px;
+      padding: 15px 5px 15px 40px;
+      border-bottom: 1px solid #f4f4f4; }
+  .customers-details .details-fields li, .customer-payments .details-fields li {
+    font-weight: bold; }
+  .customers-details .info-message, .customer-payments .info-message {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 10;
+    background: #fff;
+    /* The Fallback */
+    background: rgba(255, 255, 255, 0.7); }
+    .customers-details .info-message span, .customer-payments .info-message span {
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: middle;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); }
+
+.customer-payments {
+  margin-top: 20px;
+  float: right; }
+  .customer-payments .details {
+    width: 100%;
+    font-size: 14px; }
+    .customer-payments .details:not(:last-child) {
+      border-bottom: 1px solid #f39c12; }
+    .customer-payments .details span.title {
+      font-weight: bold; }
+
+/*# sourceMappingURL=CustomerDetails.css.map */

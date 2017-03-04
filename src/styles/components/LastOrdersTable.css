@@ -1,0 +1,49 @@
+.orders-table table {
+  border-top: 3px solid #00c0ef;
+  font-size: 14px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse; }
+  .orders-table table tr.title {
+    border-bottom: 1px solid #f4f4f4; }
+    .orders-table table tr.title td {
+      font-size: 16px; }
+  .orders-table table tr.headers {
+    border-bottom: 2px solid #f4f4f4; }
+    .orders-table table tr.headers td {
+      border-bottom: none !important; }
+  .orders-table table tbody td, .orders-table table thead td, .orders-table table tfoot td {
+    padding: 10px;
+    vertical-align: top; }
+    .orders-table table tbody td p, .orders-table table thead td p, .orders-table table tfoot td p {
+      padding: 4px 0; }
+  .orders-table table tbody tr:not(.headers), .orders-table table thead tr:not(.headers), .orders-table table tfoot tr:not(.headers) {
+    border-bottom: 1px solid #f4f4f4; }
+  .orders-table table tbody tr:not(.title) td:first-child, .orders-table table tbody tr:not(.title) td:last-child, .orders-table table thead tr:not(.title) td:first-child, .orders-table table thead tr:not(.title) td:last-child, .orders-table table tfoot tr:not(.title) td:first-child, .orders-table table tfoot tr:not(.title) td:last-child {
+    display: block; }
+  .orders-table table tbody tr:not(.title) td:first-child, .orders-table table thead tr:not(.title) td:first-child, .orders-table table tfoot tr:not(.title) td:first-child {
+    margin-left: 10px; }
+  .orders-table table tbody tr:not(.title) td:last-child, .orders-table table thead tr:not(.title) td:last-child, .orders-table table tfoot tr:not(.title) td:last-child {
+    margin-right: 10px; }
+  .orders-table table thead tr:not(.title) {
+    font-weight: bold; }
+    .orders-table table thead tr:not(.title) td {
+      padding-top: 20px;
+      border-bottom: 2px solid #f4f4f4; }
+  .orders-table table tfoot {
+    position: relative;
+    margin-top: 10px; }
+    .orders-table table tfoot tr {
+      background-color: #fff;
+      height: 70px; }
+    .orders-table table tfoot td {
+      position: absolute;
+      padding-top: 20px;
+      right: 50px;
+      border-bottom: none !important; }
+
+/*# sourceMappingURL=LastOrdersTable.css.map */

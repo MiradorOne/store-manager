@@ -1,0 +1,65 @@
+.customers-list {
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+  float: left;
+  margin-right: 2%;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .customers-list ul {
+    list-style: none; }
+  .customers-list li.list-title {
+    padding: 15px 20px;
+    font-size: 18px;
+    text-align: center;
+    border-left: none;
+    margin-left: 0;
+    margin-right: 0; }
+    .customers-list li.list-title:hover {
+      background-color: #fff !important;
+      cursor: auto; }
+  .customers-list li {
+    position: relative;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f4f4f4; }
+    .customers-list li span {
+      display: inline-block;
+      font-size: 14px; }
+    .customers-list li .customer-number {
+      width: 10%;
+      padding-left: 10px;
+      font-weight: bold; }
+    .customers-list li .customer-name {
+      width: 90%;
+      padding: 15px 5px 15px 40px; }
+    .customers-list li:not(.pagination):hover {
+      cursor: pointer;
+      background: #f4f4f4;
+      /* The Fallback */
+      background: rgba(244, 244, 244, 0.6); }
+  .customers-list .pagination {
+    overflow: hidden;
+    text-align: right;
+    padding: 10px; }
+    .customers-list .pagination .buttons {
+      display: inline-block;
+      width: 50%; }
+    .customers-list .pagination .list-search {
+      display: inline-block;
+      width: 50%;
+      float: left; }
+      .customers-list .pagination .list-search input {
+        width: 100%;
+        padding: 0 10px;
+        appearance: none;
+        outline: none;
+        border: 1px solid #eee;
+        height: 30px; }
+        .customers-list .pagination .list-search input:focus {
+          border: 1px solid #d2d6de; }
+
+.active-customer {
+  background-color: #eee !important; }
+
+/*# sourceMappingURL=CustomerList.css.map */

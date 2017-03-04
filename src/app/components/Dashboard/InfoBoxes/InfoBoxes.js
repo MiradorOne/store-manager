@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Loading from '../../common/Loading/Loading';
+import '../../../../styles/components/InfoBoxes.css';
+
 
 // Child components
 import Employees from './Boxes/Employees';

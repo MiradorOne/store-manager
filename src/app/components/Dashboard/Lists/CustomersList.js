@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SearchInput, {createFilter} from 'react-search-input';
 import AddItem from '../../common/AddItem/AddItem';
+import '../../../../styles/components/CustomerList.css';
 
 const KEYS_TO_FILTERS = ['customerNumber', 'customerName'];
 

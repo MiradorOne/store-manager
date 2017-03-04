@@ -143,3 +143,18 @@ h2, h3, h4 {
 .visible {
 	display: block;
 }
+
+.dashboard {
+	width: 82%;
+	background-color: #ecf0f5;
+	display: block;
+	margin-left:18%;
+	margin-right:0;
+	padding:15px 20px;
+	overflow: hidden;
+
+	h2 {
+		font-size: 20px;
+		margin: 0 0 10px 0;
+	}
+}

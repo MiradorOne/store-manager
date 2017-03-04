@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import dateFormat from 'dateformat';
+import '../../../../styles/components/CustomerDetails.css'
 
 export default class CustomerPayments extends Component {
 

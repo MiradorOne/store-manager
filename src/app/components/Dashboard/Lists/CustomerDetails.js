@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import EditItem from '../../common/EditItem/EditItem';
 
+import '../../../../styles/components/CustomerDetails.css'
+
 export default class CustomersDetails extends Component {
 
     render() {
@@ -40,7 +42,7 @@ export default class CustomersDetails extends Component {
                     <li>Credit Limit:</li>
                 </ul>
                 {details.length > 0 ? details :
-                    <div className="info">
+                    <div className="info-message">
                         <span>Select customer to view details</span>
                     </div>
                 }

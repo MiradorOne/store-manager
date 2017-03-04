@@ -1,0 +1,48 @@
+.box-blue {
+  background-color: #00c0ef; }
+
+.box-green {
+  background-color: #00a65a; }
+
+.box-orange {
+  background-color: #f39c12; }
+
+.box-red {
+  background-color: #dd4b39; }
+
+.loading {
+  display: inline-block;
+  width: 100%;
+  padding-top: 10px; }
+  .loading svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto; }
+
+.info-boxes {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px; }
+  .info-boxes .info-box {
+    border-radius: 3px;
+    width: 25%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+    .info-boxes .info-box:not(:last-child) {
+      margin-right: 20px; }
+    .info-boxes .info-box .box-info {
+      padding: 5px 10px;
+      width: 65%;
+      height: 100%;
+      display: inline-block;
+      vertical-align: top; }
+      .info-boxes .info-box .box-info .box-value {
+        margin: 5px 0;
+        font-weight: 600;
+        line-height: 35px; }
+
+/*# sourceMappingURL=InfoBoxes.css.map */
