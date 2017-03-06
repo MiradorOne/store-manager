@@ -29,6 +29,13 @@ body {
 	&:not(:first-child) {
 		margin-left:10px;
 	}
+	a {
+		text-decoration: none;
+		color: #fff;
+		&:hover {
+			color: #fff;
+		}
+	}
 }
 
 .btn-arrow-pagination {
@@ -53,7 +60,18 @@ body {
 	background-color: $box-green-darker;
 }
 
+.btn-orange {
+	background-color: $box-orange;
+}
 
+.btn-orange-darker {
+	background-color: $box-orange-darker;
+
+}
+
+.btn-red {
+	background-color: $box-red;
+}
 
 .component-border-green {
 	border-top: 3px solid $box-green;
@@ -90,7 +108,47 @@ body {
 	}
 }
 
+.box-blue {
+	background-color: $box-blue;
+	color: #fff;
+	button {
+		background-color: $box-blue;
+	}
+}
+
+.box-red {
+	background-color: $box-red;
+	color: #fff;
+	button {
+		background-color: $box-red;
+	}
+}
+
+.box-orange {
+	background-color: $box-orange;
+	color: #fff;
+	button {
+		background-color: $box-orange;
+	}
+}
+
+.box-green {
+	background-color: $box-green;
+	color: #fff;
+	button {
+		background-color: $box-green;
+	}
+}
+
 //Typography
+
+a {
+	text-decoration: none;
+	color: #3c8dbc;
+	&:hover {
+		color: #3c8dbc;
+	}
+}
 
 h2, h3, h4 {
 	letter-spacing:.55px;
