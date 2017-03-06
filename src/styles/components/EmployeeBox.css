@@ -1,0 +1,48 @@
+.dashboard.employees .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
+.employee-box {
+  margin: 10px 0;
+  position: relative;
+  flex-basis: 32%;
+  border: 1px solid #f4f4f4; }
+  .employee-box .employee-name {
+    font-size: 18px;
+    padding: 15px 15px 10px 15px; }
+  .employee-box .job-title {
+    padding: 0 15px 20px;
+    display: inline-block; }
+  .employee-box .header-part {
+    padding: 5px 0 40px;
+    border-radius: 3px; }
+  .employee-box .bottom-part {
+    padding: 50px 15px 20px;
+    text-align: center;
+    font-size: 14px;
+    background-color: #fff;
+    border-radius: 3px; }
+    .employee-box .bottom-part ul {
+      text-align: left;
+      list-style: none; }
+      .employee-box .bottom-part ul li {
+        padding: 5px 0; }
+        .employee-box .bottom-part ul li span {
+          padding-right: 10px; }
+    .employee-box .bottom-part button {
+      margin-top: 10px;
+      width: 100px; }
+  .employee-box .profile-image {
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 60px;
+    top: 35%;
+    left: 50%;
+    transform: translateY(-35%) translateX(-50%); }
+    .employee-box .profile-image img {
+      width: 80px;
+      height: 80px; }
+
+/*# sourceMappingURL=EmployeeBox.css.map */
