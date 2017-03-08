@@ -11,8 +11,9 @@ export function fetchMainData() { //Data for Main Dashboard
             axios.get('/api?q=*&table=employees'),
             axios.get('/api?q=*&table=customers'),
             axios.get('/api?q=*&table=products'),
+            axios.get('/api?q=*&table=offices'),
         ])
-            .then(axios.spread((orders, details, employees, customers, products) => {
+            .then(axios.spread((orders, details, employees, customers, products, offices) => {
 
                 //Add to orders an array of ids from orderDetails
                 const newState = {};
@@ -34,6 +35,7 @@ export function fetchMainData() { //Data for Main Dashboard
                 dispatch({type: types.FETCH_EMPLOYEES_DATA, payload: employees.data});
                 dispatch({type: types.FETCH_CUSTOMERS_DATA, payload: customers.data});
                 dispatch({type: types.FETCH_PRODUCTS_DATA, payload: products.data});
+                dispatch({type: types.FETCH_OFFICES_DATA, payload: offices.data});
             }))
             .catch((err) => {
                 dispatch({type: 'FETCH_REJECTED', payload: err});

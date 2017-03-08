@@ -7,11 +7,6 @@ import EmployeeBox from '../components/Dashboard/EmployeeBox/EmployeeBox';
 
 export class Dashboard extends Component {
 
-    componentWillMount() {
-        this.props.dispatch(fetchEmployeesData());
-        this.props.dispatch(fetchOfficesData());
-    }
-
     render() {
         return (
             <main className="dashboard employees">
@@ -41,8 +36,8 @@ export class Dashboard extends Component {
 
 function mapStateToProps(store) {
     return {
+        office: store.offices,
         employees: store.employees,
-        office: store.offices
     }
 }
 
