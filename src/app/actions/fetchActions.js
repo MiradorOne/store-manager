@@ -42,3 +42,28 @@ export function fetchMainData() { //Data for Main Dashboard
             })
     }
 }
+
+export function fetchAllReportsData() {
+    return function (dispatch) {
+        axios.get('/api?q=*&table=daily_reports')
+            .then(response => {
+                dispatch({type: types.FETCH_DAILY_REPORTS, payload: response.data})
+            })
+            .catch((err) => {
+                dispatch({type: 'FETCH_REJECTED', payload: err});
+            })
+    }
+}
+
+export function fetchReportByDate(params) {
+    return function (dispatch) {
+
+        axios.get(`/api?q=${params.info === 'All' ? '*' : params.info+',Action'}&table=daily_reports&where=Day='${params.date}'`) //TODO: Add 1 more 'Where' on Action column
+            .then(response => {
+                dispatch({ type: types.FETCH_REPORT_BY_DATE, payload: response.data})
+            })
+            .catch((err) => {
+                dispatch({type: 'FETCH_REJECTED', payload: err});
+            })
+    }
+}

@@ -1,0 +1,43 @@
+@import '../_variables.scss';
+
+.daily-reports {
+	width: 50%;
+	overflow: hidden;
+	background-color: #fff;
+	display: inline-block;
+	box-shadow: $default-box-shadow;
+
+	h4 {
+		border-bottom: 1px solid $borders-color;
+		text-transform: none;
+		padding: 10px;
+		span {
+			float: right;
+			font-size:14px;
+		}
+	}
+
+	input, select, label {
+		display: block;
+		margin: 5px 0;
+	}
+
+	form {
+		padding: 10px;
+	}
+
+	button {
+		width:100px;
+		float: right;
+		padding: 5px 10px;
+		margin:10px 0;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: $box-blue-darker;
+		}
+	}
+
+	.react-datepicker__input-container {
+		//display: block;
+	}
+}

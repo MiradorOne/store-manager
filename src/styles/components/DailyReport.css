@@ -1,0 +1,28 @@
+.daily-reports {
+  width: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  display: inline-block;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+  .daily-reports h4 {
+    border-bottom: 1px solid #f4f4f4;
+    text-transform: none;
+    padding: 10px; }
+    .daily-reports h4 span {
+      float: right;
+      font-size: 14px; }
+  .daily-reports input, .daily-reports select, .daily-reports label {
+    display: block;
+    margin: 5px 0; }
+  .daily-reports form {
+    padding: 10px; }
+  .daily-reports button {
+    width: 100px;
+    float: right;
+    padding: 5px 10px;
+    margin: 10px 0;
+    transition: all 0.3s ease; }
+    .daily-reports button:hover {
+      background-color: #009ABF !important; }
+
+/*# sourceMappingURL=DailyReport.css.map */

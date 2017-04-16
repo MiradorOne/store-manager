@@ -1,0 +1,37 @@
+@import '../_variables.scss';
+
+.reports-list {
+	display: inline-block;
+	width:48%;
+	vertical-align: top;
+	margin-left:2%;
+	background-color: #fff;
+	box-shadow: $default-box-shadow;
+
+	h4 {
+		border-bottom: 1px solid $borders-color;
+		text-transform: none;
+		text-align: center;
+		padding: 10px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 10px 0;
+	}
+
+	.first-level {
+		strong {
+			padding: 5px 15px;
+			border-bottom: 1px solid $borders-color;
+			display: block;
+		}
+	}
+
+	.second-level {
+		li {
+			border-bottom: 1px solid $borders-color;
+			padding: 7px 30px;
+		}
+	}
+}

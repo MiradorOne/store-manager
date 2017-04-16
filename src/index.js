@@ -5,6 +5,7 @@ import App from './App';
 import Dashboard from './app/containers/MainDashboard';
 import Customers from './app/containers/Customers';
 import Employees from './app/containers/Employees';
+import Reports from './app/containers/Reports';
 import Sidebar from './app/containers/Sidebar';
 import './index.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
@@ -19,6 +20,9 @@ ReactDOM.render(
         </Route>
         <Route path="/employees" component={App}>
             <IndexRoute components={{dashboard: Employees, sidebar: Sidebar}}/>
+        </Route>
+        <Route path="/reports" component={App}>
+            <IndexRoute components={{dashboard: Reports, sidebar: Sidebar}}/>
         </Route>
     </Router>,
     document.getElementById('root')

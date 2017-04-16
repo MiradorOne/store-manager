@@ -8,6 +8,7 @@ import payments from './payments.js';
 import products from './products.js';
 import productLines from './productLines.js';
 import offices from './offices.js';
+import reports from './reports.js';
 
 export default combineReducers({
     customers,
@@ -17,5 +18,6 @@ export default combineReducers({
     offices,
     payments,
     products,
-    productLines
+    productLines,
+    reports
 });
