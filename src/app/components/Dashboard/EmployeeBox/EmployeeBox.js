@@ -38,7 +38,7 @@ export default class EmployeeBox extends Component {
                         {this.props.reportsTo ?
                             <li>
                                 <span>Reports to:</span>
-                                <Link to={`employees/${this.props.bossNumber}`} >
+                                <Link to={`employees/${this.props.reportsTo.employeeNumber}`} >
                                     {`${this.props.reportsTo.firstName} ${this.props.reportsTo.lastName}`}
                                 </Link>
                             </li> : ''}

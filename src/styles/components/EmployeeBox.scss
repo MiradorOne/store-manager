@@ -1,29 +1,6 @@
 @import "../_variables";
 
-.dashboard.employees {
-	.grid {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-}
-
 .employee-box {
-	margin: 10px 0;
-	position: relative;
-	flex-basis: 32%;
-	border: 1px solid $borders-color;
-
-	.employee-name {
-		font-size:18px;
-		padding: 15px 15px 10px 15px;
-	}
-
-	.job-title {
-		padding: 0 15px 20px;
-		display: inline-block;
-	}
-
 	.header-part {
 		padding: 5px 0 40px;
 		border-radius: $default-border-radius;
@@ -46,22 +23,86 @@
 			}
 		}
 		button {
+			position: absolute;
+			bottom: 20px;
+			right:20px;
 			margin-top:10px;
 			width: 100px;
 		}
 	}
 
-	.profile-image {
-		position: absolute;
+	.employee-name {
+		font-size:18px;
+		padding: 15px 15px 10px 15px;
+	}
+
+	.job-title {
+		padding: 0 15px 20px;
+		display: inline-block;
+	}
+}
+
+.grid {
+	.employee-box {
+		margin: 10px 0;
+		position: relative;
+		flex-basis: 32%;
+		border: 1px solid $borders-color;
 		background-color: #fff;
-		padding: 10px;
-		border-radius: 60px;
-		top:35%;
-		left:50%;
-		transform: translateY(-35%) translateX(-50%);
+
+		.profile-image {
+			position: absolute;
+			background-color: #fff;
+			padding: 10px;
+			border-radius: 60px;
+			top:35%;
+			left:50%;
+			transform: translateY(-35%) translateX(-50%);
+			img {
+				width:80px;
+				height: 80px;
+			}
+		}
+	}
+}
+
+.list {
+	padding-left: 10px;
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: column nowrap;
+	.employee-box {
+		overflow: hidden;
+		display: flex;
+		margin: 10px 0;
+		position: relative;
+
+		.bottom-part, .header-part {
+			flex-basis: 70%;
+			order:2;
+		}
+
+		.header-part {
+			flex-basis: 20%;
+		}
+
+		.bottom-part {
+			align-self: center;
+			ul {
+			}
+		}
+
+		.profile-image {
+			background-color: #fff;
+			padding: 20px;
+			align-self: center;
+			flex-basis: 10%;
+			order: 1;
+		}
+
 		img {
 			width:80px;
-			height: 80px;
+			height:80px;
 		}
 	}
 }

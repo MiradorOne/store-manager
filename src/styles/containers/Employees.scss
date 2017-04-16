@@ -1,0 +1,59 @@
+@import "../variables";
+
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.list {
+	display: inline-block;
+}
+
+.no-result {
+	margin-top:20px;
+}
+
+.filters {
+	input {
+		width: 30%;
+		margin-left:10px;
+		padding: 15px;
+		display: inline-block;
+	}
+
+	.switch {
+		display: inline-block;
+		float: right;
+		button {
+			display: inline-block;
+			padding: 10px;
+			margin:0 10px;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			outline: none;
+			cursor: pointer;
+			position: relative;
+			border: 1px solid $borders-color;
+		}
+
+		.active {
+			background-color: #fff;
+		}
+
+		.switch-grid, .switch-list {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background-color: #eee;
+		}
+		.switch-grid {
+			background-image: url('../../static/images/icons/grid.svg');
+		}
+
+		.switch-list {
+			background-image: url('../../static/images/icons/list.svg');
+		}
+	}
+}

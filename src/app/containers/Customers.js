@@ -41,11 +41,13 @@ export class Dashboard extends Component {
                     if (value.customerNumber === this.state.activeCustomerNum) {
                         return value;
                     }
+                    return null;
                 })}/>
                 <CustomerPayments data={this.props.payments.filter(value => {
                     if (value.customerNumber === this.state.activeCustomerNum) {
                         return value;
                     }
+                    return null;
                 })}/>
             </main>
         )
